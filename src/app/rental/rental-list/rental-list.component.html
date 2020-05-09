@@ -1,20 +1,8 @@
 <section id="rentalListing">
     <h1 class="title">Your Home All Around the World</h1>
     <div class="row">
-      <div class='col-md-3 col-xs-6'> <!-- Bootstrap has got in total 12 columns therefore to fit 4 cards we use 4 X 3 (Size as 3) = 12  -->
-       <bwm-rental-list-item></bwm-rental-list-item>
-   	   </div>
-
-       <div class='col-md-3 col-xs-6'> 
-       <bwm-rental-list-item></bwm-rental-list-item>
-   	   </div>
-
-   	   <div class='col-md-3 col-xs-6'> 
-       <bwm-rental-list-item></bwm-rental-list-item>
-   	   </div>
-
-   	   <div class='col-md-3 col-xs-6'> 
-       <bwm-rental-list-item></bwm-rental-list-item>
+      <div class='col-md-3 col-xs-6' *ngFor="let rental of rentals"> <!-- Bootstrap has got in total 12 columns therefore to fit 4 cards we use 4 X 3 (Size as 3) = 12  -->
+       <bwm-rental-list-item [currentRental]="rental"></bwm-rental-list-item>
    	   </div>
    	   
     </div>
