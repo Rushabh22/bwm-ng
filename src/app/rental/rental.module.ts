@@ -5,13 +5,16 @@ import { RentalComponent } from './rental.component';
 import { RentalListComponent } from './rental-list/rental-list.component';
 import { RentalListItemComponent } from './rental-list-item/rental-list-item.component';
 
+import { RentalService } from './shared/rental.service';
+
 @NgModule({
 	declarations : [
 	RentalComponent,
 	RentalListComponent,
     RentalListItemComponent
     ],
-	imports :[CommonModule]
+	imports :[CommonModule],
+	providers : [RentalService]
 })
 export class RentalModule{
 
