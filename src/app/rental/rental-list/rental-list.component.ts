@@ -13,7 +13,17 @@ export class RentalListComponent implements OnInit {
   constructor(private rentalService: RentalService) { }
 
   ngOnInit() {
-    this.rentals = this.rentalService.getRentals();
+    const rentalObervable = this.rentalService.getRentals();
+    rentalObervable.subscribe(
+    (rentals) => {
+     this.rentals = rentals;
+    },
+    (err) => {
+       
+    },
+    () => {
+
+    });
   }
 
 }
