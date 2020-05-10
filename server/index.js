@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const config = require('./config/dev');
 const Rental = require('./models/rental');
 const FakeDb = require('./fake-db');
+const rentalRoutes = require('./routes/rentals');
 
 mongoose.connect(config.DB_URI).then(() => {
 	const fakeDb = new FakeDb();
@@ -10,6 +11,8 @@ mongoose.connect(config.DB_URI).then(() => {
 });
 
 const app = express();
+
+app.use('/api/v1/rentals', rentalRoutes);
 
 app.get('/rentals', (req,res) => {
   res.json({'success' : true});
